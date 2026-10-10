@@ -113,8 +113,67 @@ At Motor Home, our vision is to build long-term relationships with customers by 
 
 
     <!-- Contact -->
+     <div class="welcome-text">
+        <h1>Contact Us & Book a Service</h1>
+        </div>
     <section id="contact">
-        <h1>Contact Us</h1>
+
+        <div id="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter the phone number" required>
+                </div>
+                <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                    >
+                </div>
+                <div class="form-group">
+                <label for="vehicle">Vehicle</label>
+                <input 
+                    type="text"
+                    id="vehicle"
+                    placeholder="Example: Hyundai i20"
+                    >
+                </div>
+                <div class="form-group">
+                <label for="service">Service Required</label>
+
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option value="General Service">General Service</option>
+                    <option value="Oil Change">Oil Change</option>
+                    <option value="Brake Service">Brake Service</option>
+                    <option value="Engine Repair">Engine Repair</option>
+                    <option value="Battery Service">Battery Service</option>
+                    <option value="Tyre Service">Tyre Service</option>
+                    <option value="AC Service">AC Service</option>
+                    <option value="Other-Service">Other Service</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Describe your vehicle problem"
+                ></textarea>
+            </div>
+            <div class="contact-container button">
+            <button type="submit">Submit Request</button>
+            <p id="formMessage"></p>
+            </div>
+            </form>
     </section>
 
 </body>
