@@ -1,51 +1,136 @@
-html {
-    scroll-behavior: smooth;
+* {
+    box-sizing: border-box;
 }
 
-body {
+html, body {
+    width: 100%;
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color:beige;
 }
-
+#header {
+    color:red;
+    background: linear-gradient(black,grey);
+    font-family:'Times New Roman', Times, serif;
+    text-align:left;
+    margin:auto;
+    padding:1px;
+    font-size: larger;
+    transition:2s;
+}
 #div {
-    color: blanchedalmond;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
     background: linear-gradient(300deg, red, black, blue);
-    padding: .5%;
+    padding:25%;
     margin: 0;
     font-size: xx-large;
+    transition:2s;
 }
 .section {
-    display: flex;
+    display:grid;
     justify-content: center;
     align-items: center;
     width: 400px;
     padding: 8px 20px;
     margin: 20px auto;
-    background: black;
+    background: linear-gradient(270deg, white, skyblue);
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.7s;
 }
 
 .section a {
-    color: blanchedalmond;
+    color: black;
     text-decoration: none;
 }
 
 .section:hover {
-    transform: scale(1.05);
+    transform: scale(1.09);
 }
 
+.welcome-text {
+    width: 100%;
+    overflow: hidden;
+    white-space:nowrap;
+    background: black;
+    padding: 5px 0;
+}
+
+.welcome-text h1 {
+    display:inline-block;
+    color: red;
+    font-size: 35px;
+    margin: 0px;
+    padding-left: 100%;
+    animation: moveText 20s linear infinite;
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.home-container {
+    display: flex;
+    align-items:right;
+    gap: 5px;
+    padding:0px;
+    border-radius:50px;
+}
+
+.home-container img {
+    width: 65%;
+    height:auto ;
+    object-fit:cover;
+    border-radius:10px;
+    max-width: 100%;
+}
 
 #p {
-    background: linear-gradient(
-        300deg,
-        rgb(165, 159, 159),
-        black,
-        rgb(120, 120, 153)
-    );
+    font-weight: bold;
+    flex: 1;
+    color: rgb(2, 2, 2);
+    background:linear-gradient(270deg,yellow,white);
+    font-size:larger;
+    padding:0px auto;
+    margin:1px;
+    line-height:device-height;
+    gap:1px
+}
 
-    color: rgb(183, 206, 84);
-    font-size: xx-large;
-    padding: 30px;
+#gallery {
+    color:red;
+    font-weight:bold;
+    font-size:medium;
+    text-align: center;
+    margin:0px;
+    
+}
+#gallery img{
+    object-fit:fill;
+}
+#about{
+    color: rgb(2, 2, 2);
+    width:100%;
+    height:auto;
+    background: linear-gradient(300deg, yellow, white);
+    font-size:larger;
+    padding: 0;
     margin: 0;
-} 
+    line-height:1.5;
+    gap: 0px
+}
+#about p {
+    margin: 0;
+    padding: 15px;
+}
