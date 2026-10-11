@@ -112,40 +112,59 @@ At Motor Home, our vision is to build long-term relationships with customers by 
     </section>
 
 
-    <!-- Contact -->
-     <div class="welcome-text">
-        <h1>Contact Us & Book a Service</h1>
-        </div>
-    <section id="contact">
+   <section id="contact">
 
-        <div id="contact-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Enter the phone number" required>
-                </div>
-                <div class="form-group">
-                <label for="email">Email</label>
-                <input 
+    <div id="contact-container">
+        <div class="welcome-text">
+        <h1 id="contact-title">Book Your Service</h1>
+        </div>  
+        <p id="contact-subtitle">
+            Tell us about your vehicle and we'll get back to you.
+        </p>
+
+        <form id="contactForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    maxlength="10"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
                     type="email"
                     id="email"
                     placeholder="Enter your email"
                     required
-                    >
-                </div>
-                <div class="form-group">
+                >
+            </div>
+
+            <div class="form-group">
                 <label for="vehicle">Vehicle</label>
-                <input 
+                <input
                     type="text"
                     id="vehicle"
                     placeholder="Example: Hyundai i20"
-                    >
-                </div>
-                <div class="form-group">
+                >
+            </div>
+
+            <div class="form-group">
                 <label for="service">Service Required</label>
 
                 <select id="service" required>
@@ -157,9 +176,10 @@ At Motor Home, our vision is to build long-term relationships with customers by 
                     <option value="Battery Service">Battery Service</option>
                     <option value="Tyre Service">Tyre Service</option>
                     <option value="AC Service">AC Service</option>
-                    <option value="Other-Service">Other Service</option>
+                    <option value="Other Service">Other Service</option>
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="message">Message</label>
 
@@ -169,12 +189,15 @@ At Motor Home, our vision is to build long-term relationships with customers by 
                     placeholder="Describe your vehicle problem"
                 ></textarea>
             </div>
-            <div class="contact-container button">
-            <button type="submit">Submit Request</button>
-            <p id="formMessage"></p>
-            </div>
-            </form>
-    </section>
 
+            <button id="submit-btn" type="submit">
+                🔧 Submit Service Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
 </body>
 </html>
