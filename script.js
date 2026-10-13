@@ -27,3 +27,6 @@ appointment.addEventListener("change", function () {
         appointment.value = "";
     }
 });
+phone.addEventListener("input",function(){
+    phone.value=phone.value.replace(/\D/g,"");
+});
