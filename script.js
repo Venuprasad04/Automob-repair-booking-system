@@ -30,3 +30,55 @@ appointment.addEventListener("change", function () {
 phone.addEventListener("input",function(){
     phone.value=phone.value.replace(/\D/g,"");
 });
+form.addEventListener("submit",function(event){
+    event.preventDefault();
+    const nameValue=customerName.value.trim();
+    const phoneValue=phone.value.trim();
+    const emailValue=email.value.trim();
+    const vehicleValue = vehicle.value.trim();
+    const serviceValue = service.value;
+    const appointmentValue = appointment.value;
+    const messageValue = customerMessage.value.trim();
+    if(nameValue.length<3){
+        showError("Please enter a valid full name.");
+        customerName.focus();
+        return;
+
+    }
+    if(phoneValue.length!==10){
+        showError("Phone number must contain 10 digit.");
+        phone.focus();
+        return;
+    }
+    if(vehicleValue===""){
+        showError("Please enter your vehicle name");
+        vehicle.focus();
+        return;
+    }
+      if (serviceValue === "") {
+
+        showError("Please select a service.");
+
+        service.focus();
+
+        return;
+    }
+       if (appointmentValue === "") {
+
+        showError("Please select an appointment date and time.");
+
+        appointment.focus();
+
+        return;
+    }
+    showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
+
+});
+function showSuccess(message) {
+    formMessage.textContent = message;
+    formMessage.style.color = "green";
+}
+function showError(message) {
+    formMessage.textContent = message;
+    formMessage.style.color = "red";
+}
