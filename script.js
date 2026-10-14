@@ -72,8 +72,8 @@ form.addEventListener("submit",function(event){
         return;
     }
     showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
-
 });
+
 function showSuccess(message) {
     formMessage.textContent = message;
     formMessage.style.color = "green";
@@ -82,3 +82,19 @@ function showError(message) {
     formMessage.textContent = message;
     formMessage.style.color = "red";
 }
+const navigationSections=document.querySelectorAll(".section");
+    navigationSections.forEach(function (section){
+        section.addEventListener("click", function(){
+            const link=section.querySelector("a");
+            if(link){
+                const targetId=link.getAttribute("href");
+                const target=document.querySelector(targetId);
+            if(target){
+                    target.scrollIntoView({
+                        behavior:"smooth"
+                    });
+                }
+            }
+
+        });
+    });
