@@ -364,11 +364,17 @@ html, body {
 
 #formMessage {
 
+  #formMessage {
+    display: block;
+    width: 100%;
     text-align: center;
 
-    margin-top: 15px;
-
+    font-size: 18px;
     font-weight: bold;
+
+    margin-top: 20px;
+    min-height: 25px;
+}
 }
 @media (max-width: 600px) {
 
