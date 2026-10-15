@@ -72,6 +72,16 @@ form.addEventListener("submit",function(event){
         return;
     }
     showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
+    console.log("MOTOR HOME BOOKING");
+    console.log("Customer Name",nameValue);
+    console.log("Phone:", phoneValue);
+    console.log("Email:", emailValue);
+    console.log("Vehicle:", vehicleValue);
+    console.log("Service:", serviceValue);
+    console.log("Appointment:",appointmentValue);
+    console.log("Message:",messageValue);
+    form.reset();
+setMinimumAppointmentTime();
 });
 
 function showSuccess(message) {
@@ -98,3 +108,4 @@ const navigationSections=document.querySelectorAll(".section");
 
         });
     });
+
