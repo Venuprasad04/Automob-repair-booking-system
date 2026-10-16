@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Repair Shop</title>
+    <link rel="stylesheet" href="static.css">
+</head> 
+<body>
+
+    <!-- Navigation -->
+     <header id="header">
+        <h1>🚗 Motors_Home | Auto Care & Repair ⚙️🔧</h1>
+    </header>
+    <div id="div">
+        <section class="section">
+            <a href="#home"><h1>Home</h1></a>
+        </section>
+
+        <section class="section">
+            <a href="#gallery"><h1>Gallery</h1></a>
+        </section>
+
+        <section class="section">
+            <a href="#about"><h1>About Us</h1></a>
+        </section>
+
+        <section class="section">
+            <a href="#review"><h1>Review</h1></a>
+        </section>
+
+        <section class="section">
+            <a href="#contact"><h1>Contact Us</h1></a>
+        </section>
+    </div>
+
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <div class="welcome-text">
+        <h1>Welcome to Motor Home</h1>
+        </div>
+        <div class="home-container">
+
+        <img
+            src="MH.png"
+            alt="Automobile Repair"
+        >
+
+        <p id="p">
+            Welcome to **Motor Home –
+             Your Trusted Automobile Repair Shop**,
+              where quality service, customer satisfaction, and reliable vehicle care come together. 
+              We understand that your vehicle plays an important role in your daily life, whether you use it for travelling to work, attending college, going on family trips, or exploring new places. 
+              Our mission is to keep your vehicle in excellent condition by providing professional automotive repair and maintenance services that you can trust. 
+              At Motor Home, we focus on delivering dependable solutions for a wide range of vehicle problems, from minor mechanical issues to complex engine repairs. 
+              Our services include engine diagnostics, oil changes, brake inspections, battery replacement, tyre services, wheel alignment, air conditioning repairs, and regular vehicle servicing. We believe that every vehicle deserves proper care and attention, which is why we aim to identify problems accurately and provide suitable repair solutions using modern tools and equipment.
+        </p>
+        </div>
+
+    </section>
+
+
+    <!-- Gallery -->
+        <section id="gallery">
+        <div class="welcome-text" >
+        <h1>Gallery</h1>
+            </div>
+        
+        <img src="MH_gallery.png"
+        alt="MH_Gallery"
+    >
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+        <div class="welcome-text">
+        <h1>About Us</h1>
+        </div>
+            <p>
+                 About Us – Motor Home
+
+At Motor Home, we believe that every vehicle deserves the best care and attention. We are an automobile repair and maintenance service provider dedicated to keeping vehicles safe, reliable, and performing at their best. Our goal is to make vehicle maintenance simple, convenient, and trustworthy for every customer. We understand that a vehicle is an important part of everyday life, helping people travel to work, attend college, spend time with family, and explore new destinations. That is why we aim to provide dependable repair solutions and quality maintenance services to meet different automotive needs.
+
+Motor Home focuses on a wide range of automotive services, including engine inspection, oil changes, brake repairs, battery checks, tyre maintenance, wheel alignment, air conditioning services, and general vehicle servicing. We believe that proper diagnosis and regular maintenance can help prevent major problems and improve vehicle performance over time. By using appropriate tools, modern repair techniques, and careful inspection methods, we aim to identify vehicle issues and recommend suitable solutions.
+
+Our core values are **quality, honesty, transparency, and customer satisfaction**. We believe in explaining vehicle problems clearly, helping customers understand the repairs required, and maintaining transparent communication throughout the service process. We also understand the importance of time and affordability, so we strive to provide efficient service and practical solutions that suit our customers' needs.
+
+At Motor Home, our vision is to build long-term relationships with customers by delivering dependable service and creating a positive repair experience. We continuously aim to improve our knowledge of automotive technology and adapt to changing vehicle maintenance requirements. Whether your vehicle needs routine servicing or attention to a specific mechanical issue, we are committed to helping you keep it in good condition.
+
+**Motor Home is more than an automobile repair shop; it represents our commitment to keeping you moving with confidence. Your safety, your vehicle, and your satisfaction are at the heart of everything we do. Your Car, Our Care!**
+        </p>       
+</section>
+
+
+    <!-- Review -->
+    <section id="review">
+        <div class="welcome-text">
+        <h1>Reviews</h1>
+        </div>
+        <img src="MH_review.png"
+        alt="MH_Review"
+        >
+    </section>
+
+
+   <section id="contact">
+
+    <div id="contact-container">
+        <div class="welcome-text">
+        <h1 id="contact-title">Book Your Service</h1>
+        </div>  
+        <p id="contact-subtitle">
+            Tell us about your vehicle and we'll get back to you.
+        </p>
+
+        <form id="contactForm">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    maxlength="10"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle">Vehicle</label>
+                <input
+                    type="text"
+                    id="vehicle"
+                    placeholder="Example: Hyundai i20"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Required</label>
+
+                <select id="service" required>
+                    <option value="">Select Service</option>
+                    <option value="General Service">General Service</option>
+                    <option value="Oil Change">Oil Change</option>
+                    <option value="Brake Service">Brake Service</option>
+                    <option value="Engine Repair">Engine Repair</option>
+                    <option value="Battery Service">Battery Service</option>
+                    <option value="Tyre Service">Tyre Service</option>
+                    <option value="AC Service">AC Service</option>
+                    <option value="Other Service">Other Service</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="datetime-local"
+                id="appointmentDate"
+                name="appointmentDate"
+                required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+
+                <textarea
+                    id="message"
+                    rows="5"
+                    placeholder="Describe your vehicle problem"
+                ></textarea>
+            </div>
+
+            <button id="submit-btn" type="submit">
+                🔧 Submit Service Request
+            </button>
+
+            <p id="formMessage"> </p>
+
+
+        </form>       
+    </div>
+
+</section>
+<script src="script.js">
+
+</script>
+</body>
+</html>
