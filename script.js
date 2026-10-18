@@ -7,6 +7,7 @@ const service = document.getElementById("service");
 const appointment = document.getElementById("appointmentDate");
 const customerMessage = document.getElementById("message");
 const formMessage = document.getElementById("formMessage");
+ const submitButton = document.getElementById("submit-btn");
 function setMinimumAppointmentTime(){
     const now=new Date();
     const year = now.getFullYear();
@@ -30,8 +31,11 @@ appointment.addEventListener("change", function () {
 phone.addEventListener("input",function(){
     phone.value=phone.value.replace(/\D/g,"");
 });
-form.addEventListener("submit",function(event){
+form.addEventListener("submit",async function(event){
     event.preventDefault();
+    if (submitButton.disabled) {
+        return;
+    }
     const nameValue=customerName.value.trim();
     const phoneValue=phone.value.trim();
     const emailValue=email.value.trim();
@@ -71,19 +75,93 @@ form.addEventListener("submit",function(event){
 
         return;
     }
-    showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
-    console.log("MOTOR HOME BOOKING");
-    console.log("Customer Name",nameValue);
-    console.log("Phone:", phoneValue);
-    console.log("Email:", emailValue);
-    console.log("Vehicle:", vehicleValue);
-    console.log("Service:", serviceValue);
-    console.log("Appointment:",appointmentValue);
-    console.log("Message:",messageValue);
-    form.reset();
-setMinimumAppointmentTime();
-});
+    
 
+    // Frontend validation
+    if (nameValue.length < 3) {
+        showError("Enter a valid full name.");
+        return;
+    }
+
+    if (!/^[0-9]{10}$/.test(phoneValue)) {
+        showError("Enter a valid 10-digit phone number.");
+        return;
+    }
+
+    if (!email.validity.valid || !emailValue) {
+        showError("Enter a valid email.");
+        return;
+    }
+
+    if (!vehicleValue) {
+        showError("Enter your vehicle details.");
+        return;
+    }
+
+    if (!serviceValue) {
+        showError("Please select a service.");
+        return;
+    }
+
+    if (!appointmentValue ||
+        new Date(appointmentValue) <= new Date()) {
+        showError("Choose a future appointment time.");
+        return;
+    }
+
+    // Prepare the booking information
+    const bookingData = {
+        name: nameValue,
+        phone: phoneValue,
+        email: emailValue,
+        vehicle: vehicleValue,
+        service: serviceValue,
+        appointment_date: appointmentValue,
+        message: messageValue
+    };
+     const csrfInput = form.querySelector(
+        "[name=csrfmiddlewaretoken]"
+    );
+
+    if (!csrfInput) {
+        showError("Security token missing. Refresh the page.");
+        return;
+    }
+
+    submitButton.disabled = true;
+     submitButton.textContent = "Submitting...";
+     formMessage.textContent = "";
+    try {
+        // Send booking data to Django
+        const response = await fetch("/api/appointment/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfInput.value
+            },
+            body: JSON.stringify(bookingData)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            showError(result.error || "Appointment could not be saved.");
+            return;
+        }
+     showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
+
+        form.reset();
+        setMinimumAppointmentTime();
+
+    } catch (error) {
+        showError("Unable to connect to the server. Please try again.");
+        console.error("Booking request failed:", error);
+
+    } finally {
+        submitButton.disabled = false;
+         submitButton.textContent = "🔧 Submit Service Request";
+    }
+});
 function showSuccess(message) {
     formMessage.textContent = message;
     formMessage.style.color = "green";
@@ -108,4 +186,5 @@ const navigationSections=document.querySelectorAll(".section");
 
         });
     });
+
 
