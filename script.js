@@ -7,7 +7,8 @@ const service = document.getElementById("service");
 const appointment = document.getElementById("appointmentDate");
 const customerMessage = document.getElementById("message");
 const formMessage = document.getElementById("formMessage");
- const submitButton = document.getElementById("submit-btn");
+const submitButton = document.getElementById("submit-btn");
+const checkStatusBtn = document.getElementById("checkStatusBtn");
 function setMinimumAppointmentTime(){
     const now=new Date();
     const year = now.getFullYear();
