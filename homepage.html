@@ -116,6 +116,7 @@ At Motor Home, our vision is to build long-term relationships with customers by 
             Tell us about your vehicle and we'll get back to you.
         </p>
 
+
         <form id="contactForm">
             {% csrf_token %}
 
@@ -202,6 +203,21 @@ At Motor Home, our vision is to build long-term relationships with customers by 
 
         </form>       
     </div>
+    <div class="booking-tracker">
+    <h2>🔎 Track Your Appointment</h2>
+
+    <input
+        type="text"
+        id="trackingToken"
+        placeholder="Enter your booking reference"
+    >
+
+    <button type="button" id="checkStatusBtn">
+        Check Status
+    </button>
+
+    <p id="bookingStatus"></p>
+</div>
 
 </section>
 <script src="script.js">
