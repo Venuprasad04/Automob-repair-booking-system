@@ -148,7 +148,9 @@ form.addEventListener("submit",async function(event){
             showError(result.error || "Appointment could not be saved.");
             return;
         }
-     showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully`);
+        const token=result.tracking_token;
+     showSuccess(`Thank you ${nameValue}! Your appointment request has been submitted successfully and your booking ref is ${token}`);
+     trackingToken.value=token;
 
         form.reset();
         setMinimumAppointmentTime();
@@ -186,5 +188,36 @@ const navigationSections=document.querySelectorAll(".section");
 
         });
     });
+const trackingToken=document.getElementById("trackingToken");
+const bookingStatus=document.getElementById("bookingStatus");
+async function checkAppointmentStatus(){
+    const token=trackingToken.value.trim();
+    if(!token){
+        bookingStatus.textContent="Please enter your booking reference";
+        return;
+    }
+    try {
+        const response=await fetch(`/api/appointment/status/${encodeURIComponent(token)}/` 
+    );
+    if (!response.ok){
+        bookingStatus.textContent="Booking not found.Check your refernece";
+        return;
+    }
+    const data=await response.json();
+    bookingStatus.textContent=`Appointment Status:${data.status}`;
+     if (data.status === "Approved") {
+            bookingStatus.style.color = "green";
+        } else if (data.status === "Rejected") {
+            bookingStatus.style.color = "red";
+        } else {
+            bookingStatus.style.color = "orange";
+        }
 
+    }catch (error){
+        bookingStatus.textContent="Unable to check status right now";
+        console.error(error);
+
+    }
+}
+checkStatusBtn.addEventListener("click",checkAppointmentStatus);
 
