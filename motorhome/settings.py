@@ -14,6 +14,10 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+import os
+from dotenv import load_dotenv
+
+load_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -126,3 +130,16 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+SMS_TEST_MODE = os.getenv(
+    "SMS_TEST_MODE", "True"
+).lower() == "true"
+
+MSG91_AUTH_KEY = os.getenv("MSG91_AUTH_KEY", "")
+
+MSG91_APPROVED_TEMPLATE_ID = os.getenv(
+    "MSG91_APPROVED_TEMPLATE_ID", ""
+)
+
+MSG91_REJECTED_TEMPLATE_ID = os.getenv(
+    "MSG91_REJECTED_TEMPLATE_ID", ""
+)
