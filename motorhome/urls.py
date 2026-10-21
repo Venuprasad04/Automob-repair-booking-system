@@ -14,5 +14,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path("api/appointment/",views.create_appointment,name="create_appointment"),
-     path('<str:filename>', views.frontend_asset),
+    path("api/appointment/status/<uuid:token>/",
+         views.appointment_status,
+         name="appointment_status"),
+    path('<str:filename>', views.frontend_asset),
 ]
