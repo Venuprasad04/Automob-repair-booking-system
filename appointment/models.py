@@ -13,7 +13,7 @@ class Appointment(models.Model):
     service=models.CharField(max_length=100)
     appointment_date=models.DateTimeField()
     message=models.TextField(blank=True)
-    status=models.CharField(max_length=20, default="Pending....")
+    status=models.CharField(max_length=20, default="Pending")
     tracking_token=models.UUIDField(
         default=uuid.uuid4,
         unique=True,

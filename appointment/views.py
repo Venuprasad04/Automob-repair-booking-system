@@ -8,6 +8,9 @@ from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from .models import Appointment 
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_GET
+from .models import Appointment
 def home(request):
     return render(request, "homepage.html")
 from django.conf import settings
@@ -103,5 +106,10 @@ def create_appointment(request):
     return JsonResponse({
         "success":True,
         "message":"Appoointment request saved successfully",
-        "booking_id":booking.id},status=201
+        "booking_id":booking.id,
+        "tracking_token":str(booking.tracking_token)},status=201
     )
+@require_GET
+def appointment_status(request,token):
+    booking=get_object_or_404(Appointment,tracking_token=token)
+    return JsonResponse({"status":booking.status})
