@@ -27,9 +27,14 @@ load_dotenv(BASE_DIR / ".env")
 SECRET_KEY = 'django-insecure-ww2294##0o%=l-zp!zbbx!gtk+((&#6=25cy3(k^eq7sm-9-8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['automob-repair-booking-system.vercel.app',
+    'localhost',
+    '127.0.0.1',]
+CSRF_TRUSTED_ORIGINS = [
+    "https://automob-repair-booking-system.vercel.app",
+]
 
 
 # Application definition
