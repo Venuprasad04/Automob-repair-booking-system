@@ -636,4 +636,14 @@ html, body {
         font-size:16px;
         border-radius:8px;
     }
+    #appointmentDate{
+        width:100%;
+        min-width:0%;
+        max-width:100%;
+    }
+    .form-group label{
+        text-align:center;
+        font-size:15px;
+        margin-top:12px;
+    }
 }
