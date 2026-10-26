@@ -646,4 +646,7 @@ html, body {
         font-size:15px;
         margin-top:12px;
     }
+     #contact .welcome-text {
+        white-space: normal;
+    }
 }
