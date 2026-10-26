@@ -604,6 +604,8 @@ html, body {
 }
 @media (max-width:600px){
     #contact{
+        text-align: center;
+        padding:auto;
         width: 100%;
         min-height:auto;
         padding:20px 12px; 
@@ -615,5 +617,23 @@ html, body {
         margin: 0 auto;
         border-radius: 15px;
         box-sizing: border-box;
+    }
+    #contactForm,
+    #contactForm .form-group{
+        width:100%;
+        min-width:auto-fit;
+        text-align: center;
+    }
+    #contactForm input,
+    #contactForm select,
+    #contactForm textarea{
+        display:block;
+        width:100%;
+        max-width:100%;
+        min-width:auto;
+        box-sizing:border-box;
+        padding:12px;
+        font-size:16px;
+        border-radius:8px;
     }
 }
