@@ -664,9 +664,12 @@ html, body {
         line-height: 1.5;
         margin: 10px 0 20px;
     }
-     #contact-subtitle {
-        font-size: 14px;
-        line-height: 1.5;
-        margin: 10px 0 20px;
+   #submit-btn {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        white-space: normal;
     }
+    
 }
