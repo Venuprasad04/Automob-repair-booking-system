@@ -24,7 +24,7 @@ import dj_database_url
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG","False").lower()=="true"
 
 ALLOWED_HOSTS = ['automob-repair-booking-system.vercel.app',
     'localhost',
