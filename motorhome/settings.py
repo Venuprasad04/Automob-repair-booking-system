@@ -29,8 +29,13 @@ DEBUG = os.getenv("DEBUG","False").lower()=="true"
 ALLOWED_HOSTS = ['automob-repair-booking-system.vercel.app',
     'localhost',
     '127.0.0.1',]
+vercel_url = os.environ.get("VERCEL_URL")
+
+if vercel_url:
+    ALLOWED_HOSTS.append(vercel_url)
 CSRF_TRUSTED_ORIGINS = [
     "https://automob-repair-booking-system.vercel.app",
+    "https://*.vercel.app",
 ]
 
 
