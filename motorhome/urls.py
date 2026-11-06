@@ -9,6 +9,16 @@ Including another URLconf
 from appointment import views
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+def sitemap(request):
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://automob-repair-booking-system.vercel.app/</loc>
+        </url>
+    </urlset>
+    """
+    return HttpResponse(xml, content_type="application/xml")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,4 +28,5 @@ urlpatterns = [
          views.appointment_status,
          name="appointment_status"),
     path('<str:filename>', views.frontend_asset),
+    path("sitemap.xml", sitemap, name="sitemap"),
 ]
