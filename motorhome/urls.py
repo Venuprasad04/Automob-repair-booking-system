@@ -27,6 +27,7 @@ urlpatterns = [
     path("api/appointment/status/<uuid:token>/",
          views.appointment_status,
          name="appointment_status"),
-    path('<str:filename>', views.frontend_asset),
     path("sitemap.xml", sitemap, name="sitemap"),
+    path('<str:filename>', views.frontend_asset),
+    
 ]
