@@ -12,8 +12,8 @@ html, body {
 }
 #header {
     color:red;
-    background: linear-gradient(black,grey);
-    font-family:'Times New Roman', Times, serif;
+    background: linear-gradient(rgb(59, 57, 57),black);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-align:left;
     margin:auto;
     padding:1px;
@@ -26,7 +26,7 @@ html, body {
     justify-content: center;
     align-items: center;
     gap:15px;
-    background: linear-gradient(300deg, red, black, blue);
+    background: linear-gradient(180deg,rgb(59, 57, 57),black);
     padding:80px;
 }
 .section {
@@ -37,10 +37,10 @@ html, body {
     min-height: 80px;
     padding: 15px 20px;
     margin: 20px auto;
-    background: linear-gradient(270deg, white, skyblue);
+    background: linear-gradient(270deg, rgb(34, 34, 34),goldenrod);
     border-radius: 50px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 2.3s;
 }
 
 .section a {
